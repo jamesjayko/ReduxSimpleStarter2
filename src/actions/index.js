@@ -9,10 +9,9 @@ export function fetchWeather(city) {
 	const url = `${ROOT_URL}&q=${city},us`;
     // redux-promise middleware will interupt this axios call (which will return a promise by nature) 
     // and make it regular data to send to all the reducers instead of a promise object.
-	const request = axios.get(url);
-
+    const request = axios.get(url);
+    
 	// console.log('request:', request); // proof that it returns a promise not data.
-
 	return {
 		type: FETCH_WEATHER,
 		payload: request
