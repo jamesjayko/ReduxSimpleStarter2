@@ -22,16 +22,19 @@ class BookList extends Component {
 }
 
 function mapStateToProps(state) {
-	// whatever is returned will show up as this.props inside of BookList
+	// whatever is returned will show up as this.props inside of BookList.
+	// whenever the state is changed, this container will re-render and "refresh"
 	return {
 		books: state.books
 	};
 }
+
 // anything returned from mapDispatchToProps will end up as this.props on the BookList so this.props.selectBook will work.
 function mapDispatchToProps(dispatch) {
 	// Whenever selectBook is called, the result should be passed to all our reducers.
 	return bindActionCreators({ selectBook: selectBook }, dispatch);
 }
+
 // promote BookList from a component to a container - it needs to know about this new dispatch method, selectBook. Make it available as a prop.
 export default connect(
 	mapStateToProps,
