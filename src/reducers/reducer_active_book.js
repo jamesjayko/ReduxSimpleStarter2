@@ -2,8 +2,7 @@
 export default function(state = null, action) {
 	switch (action.type) {
 		case 'BOOK_SELECTED':
-			// console.log('what is state active book:', state);
-
+			// whatever is returned will be the new state of that key in reducers/index.js
 			return action.payload;
 			break;
 
